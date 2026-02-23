@@ -269,3 +269,10 @@ Pós removoção da configurações problemáticas:
 
     drush @ppgh.fflch.usp.br config:set system.theme default fflch --yes
     drush @ppgh.fflch.usp.br config:set languageicons.settings path 'modules/contrib/languageicons/flags/*.png' -y
+
+Considerar usar:
+
+    drush webform:repair
+
+    ../vendor/bin/drush webform:repair --help
+Makes sure all Webform admin configuration and webform settings are up-to-date.

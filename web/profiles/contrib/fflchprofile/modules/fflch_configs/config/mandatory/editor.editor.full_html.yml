@@ -62,7 +62,6 @@ settings:
             - Link
             - Unlink
             - DrupalFile
-            - DrupalImage
         -
           name: Identação
           items:

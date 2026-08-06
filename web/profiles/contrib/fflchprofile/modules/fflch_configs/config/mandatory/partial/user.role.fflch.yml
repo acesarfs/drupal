@@ -48,6 +48,7 @@ permissions:
   - 'administer css assets injector'
   - 'administer js assets injector'
   - 'csv importer'
+  - 'administer hcaptcha'
 # Editor de texto
   - 'use text format full_html'
 # Não digitar captcha

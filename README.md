@@ -6,10 +6,7 @@ Plataforma Drupal usada nos sites da FFLCH.
 
 Construindo a imagem e subindo o ecosistema com o banco de dados:
 
-    docker build --no-cache -t drupalfflch .
-    docker compose up
-
-
+    docker compose up --build
     docker exec -it drupalfflch composer install
     docker exec -it drupalfflch ./vendor/bin/drush site-install fflchprofile \
         --db-url=mysql://drupalfflch:drupalfflch@mariadb/drupalfflch \
@@ -19,7 +16,11 @@ Construindo a imagem e subindo o ecosistema com o banco de dados:
         --account-pass="fflch" \
         --account-mail="fflch@localhost" --yes
 
-Acessar http://localhost:8000 com usuário: fflch e senha: fflch
+Trocar senha:
+
+    docker exec -it drupalfflch ./vendor/bin/drush upwd fflch --password="fflch"
+
+Acessar http://127.0.0.1:8000 com usuário: fflch e senha: fflch
 
 ## Adicionando temas, módulos e bibliotecas
 

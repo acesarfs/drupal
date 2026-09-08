@@ -1,7 +1,9 @@
 FROM php:7.4-apache
 
 # Pacotes do sistema
-RUN apt-get update && apt-get install -y \
+# Subtitui os repositórios para usar apenas o repositório de arquivo do Debian Bullseye
+RUN echo "deb http://archive.debian.org/debian bullseye main" > /etc/apt/sources.list \
+    && apt-get -o Acquire::Check-Valid-Until=false update && apt-get install -y \
     default-mysql-client \
     unixodbc \
     unixodbc-dev \
@@ -15,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     libjpeg-dev \
-    libfreetype6-dev \ 
+    libfreetype6-dev \
     curl
 
 # Cria um link simbólico para que o PHP encontre as bibliotecas do FreeTDS
